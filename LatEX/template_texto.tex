@@ -1,0 +1,350 @@
+%%% LaTeX Template: Two column article
+%%%
+%%% Source: http://www.howtotex.com/
+%%% Feel free to distribute this template, but please keep to referal to http://www.howtotex.com/ here.
+%%% Date: February 2011
+
+%%% Preamble
+\documentclass[	DIV=calc,%
+							paper=a4,%
+							fontsize=12pt,%
+							onecolumn]{scrartcl}% KOMA-article class
+\usepackage{placeins}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{lipsum}	% Package to create dummy text
+\usepackage[brazil]{babel}										% English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}				% Better typography
+\usepackage{amsmath,amsfonts,amsthm}					% Math packages
+\usepackage[pdftex]{graphicx}									% Enable pdflatex
+\usepackage[svgnames]{xcolor}									% Enabling colors by their 'svgnames'
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}	% Custom captions under/above floats
+\usepackage{epstopdf}												% Converts .eps to .pdf
+\usepackage{subfig}													% Subfigures
+\usepackage{booktabs}												% Nicer tables
+\usepackage{fix-cm}													% Custom fontsizes
+\usepackage[utf8]{inputenc}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage[ddmmyyyy]{datetime}
+\addto\captionsenglish{%
+	\renewcommand\tablename{Tabela}
+	\renewcommand\figurename{Figura}
+} 
+
+%%% Custom sectioning (sectsty package)
+\usepackage{sectsty}													% Custom sectioning (see below)
+\allsectionsfont{%															% Change font of al section commands
+	\usefont{OT1}{phv}{b}{n}%										% bch-b-n: CharterBT-Bold font
+	}
+
+\sectionfont{%																% Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%										% bch-b-n: CharterBT-Bold font
+	}
+
+
+
+%%% Headers and footers
+\usepackage{fancyhdr}												% Needed to define custom headers/footers
+	\pagestyle{fancy}														% Enabling the custom headers/footers
+\usepackage{lastpage}	
+
+% Header (empty)
+\lhead{}
+\chead{}
+\rhead{}
+% Footer (you may change this to your own needs)
+
+%% ====================================
+%% ====================================
+%% mude o rodape  do projeto
+%% ====================================
+%% ====================================
+
+\lfoot{\footnotesize \texttt{Template para entrega de texto} \textbullet ~Modelo de projeto}
+
+
+\cfoot{}
+\rfoot{\footnotesize página \thepage\ de \pageref{LastPage}}	% "Page 1 of 2"
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+%%% Creating an initial of the very first character of the content
+\usepackage{lettrine}
+\newcommand{\initial}[1]{%
+     \lettrine[lines=3,lhang=0.3,nindent=0em]{
+     				\color{DarkGoldenrod}
+     				{\textsf{#1}}}{}}
+%%% Title, author and date metadata
+\usepackage{titling}															% For custom titles
+
+\newcommand{\HorRule}{\color{DarkGoldenrod}%			% Creating a horizontal rule
+									  	\rule{\linewidth}{1pt}%
+										}
+
+\pretitle{\vspace{-30pt} \begin{flushleft} \HorRule 
+				\fontsize{50}{50} \usefont{OT1}{phv}{b}{n} \color{DarkRed} \selectfont 
+				}
+
+%% ====================================
+%% ====================================
+%% mude o titulo  do projeto
+%% ====================================
+%% ====================================
+
+\title{Modelo de Processo S.C.U. }					% Title of your article goes here
+
+%% ====================================
+
+
+
+\posttitle{\par\end{flushleft}\vskip 0.5em}
+
+\preauthor{\begin{flushleft}
+					\large \lineskip 0.5em \usefont{OT1}{phv}{b}{sl} \color{DarkRed}}
+\author{Felipe Issamu de Melo Kamimura, Isabelle Ichikawa Yagi, Lucas Freitas Costa, Lucas Tarumoto, Nathiely Moraes Macedo, Raniel Carlos Bispo dos Santos }  	% Author name goes here
+
+
+\postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black} 
+					\\Universidade Tecnológica Federal do Paraná - Campus Cornélio Procópio 								% Institution of author
+					\par\end{flushleft}\HorRule}
+
+\date{}																				% No date
+
+
+
+
+%%% Begin document
+\begin{document}
+\maketitle
+\thispagestyle{fancy} 	
+\thispagestyle{empty}		% Enabling the custom headers/footers for the first page 
+% The first character should be within \initial{}
+
+
+
+
+%% ====================================
+%% ====================================
+%% mude o resumo  do projeto
+%% ====================================
+%% ====================================
+\initial{E}\textbf{ste documento descreve um modelo de processo de desenvolvimento de Software S.C.U.}
+
+%% ====================================
+\begin{figure}
+	\centering
+	\includegraphics{utfpr}
+\end{figure}
+
+\vspace{3cm}
+\centerline{\textit{\textbf{\today}}}
+
+\clearpage
+    \renewcommand*\listfigurename{Lista de figuras}
+\listoffigures
+
+\renewcommand*\listtablename{Lista de tabelas}
+\listoftables
+
+
+
+
+\clearpage
+\renewcommand{\contentsname}{Sumário}
+\tableofcontents
+\clearpage
+
+%% ====================================
+%% ====================================
+%% Inicio do texto
+%% ====================================
+%% ====================================
+\section{Introdução}
+O presente documento descreve um processo de produção de software construído com base no Scrum \cite{sutherland2014scrum}, no Cascata \cite{sommervilleengenharia} e no Processo Unificado \cite{scott2003processo}, o SCU, que busca unir conceitos de metodologia ágil com metodologia clássica, o objetivo é um processo simples de coordenar e bastante interativo, onde a comunicação entre os envolvidos e o comprometimento com cada fase do processo são evidenciados ao longo do desenvolvimento.	
+
+Assim os integrantes que realizarão o projeto serão estes apresentados a seguir, cada um com seu respectivo papel:
+
+
+\begin{itemize}
+	\item Felipe Kamimura - Integrante do Scrum Team
+	\item Isabelle Ichikawa - Scrum Master
+	\item Lucas Freitas - Integrante do Scrum Team
+	\item Lucas Tarumoto - Integrante do Scrum Team
+	\item Nathiely Moraes - Integrante do Scrum Team
+    \item Raniel Santos - Integrante do Scrum Team
+\end{itemize}
+
+O Product Owner deve ser o cliente do projeto que será desenvolvido utilizando o processo SCU. Oendereço do repositório do projeto é: \\
+https://github.com/FelipeKamimura/GerenciaDeConfig-SCU.
+
+
+\section{Processo}
+
+O processo foi implementado com elementos do Scrum \cite{sutherland2014scrum}, do Processo Unificado \cite{scott2003processo} e do modelo Cascata \cite{sommervilleengenharia}. As fases constantes no cascata \cite{sommervilleengenharia} foram mantidas no SCU, sendo consideradas sprints, que possuem reuniões no início de cada fase, onde são discutidos os objetivos da sprint, as dificuldades encontradas no desenvolvimento da sprint anterior e os avanços alcançados (conforme templates de reuniões).
+
+Para garantir que o processo tenha qualidade, assim como o scrum, o processo proposto segue as diretrizes do modelo de qualidade CMMI, pois se trata de uma metodologia ágil. Este modelo requer padronização nos processos, sendo assim, todas as fases do SCU são definidas nesse documento, além dos relatórios e reuniões que possuem um padrão de documentação aqui disponibilizados. O planejamento dos prazos também são detalhados neste documento, a fim de tornar o processo gerenciado. O processo atende às requisições de definido, sendo descrito detalhadamente todos os seus procedimentos no presente documento.
+
+Do processo unificado foram extraídos os artefatos e os papéis \cite{scott2003processo}, entretanto os papéis do scrum \cite{sutherland2014scrum}também fazem parte do processo, sendo eles o Scrum Master, Product Owner e Scrum Team \cite{sutherland2014scrum} (os papéis são detalhados no item 2.1 deste documento. Além das sprints tradicionais do Scrum \cite{sutherland2014scrum}, no SCU existem as subsprints, que são conjuntos de atividades, podendo ser feitas em paralelo ou não, com determinado prazo de entrega. A diferenciação em sprints e subsprints se deve às reuniões, pois as sprints dependem das reuniões realizadas antes de sua iniciação, já as subsprints não possuem reuniões formais. A retroatividade do modelo cascata também é mantida, dessa forma, caso haja mudanças nos requisitos, por exemplo, pode-se voltar pra primeira fase e realizar as alterações.
+
+A primeira coisa a ser realizada no processo é a reunião de iniciação, o objetivo desta reunião é envolver todos os stakeholders no processo, é o momento em que o Scrum Master mostra o contexto do projeto para sua equipe e orienta os membros em relação às suas atividades, em seguidas as subsprints são definidas e o prazo de entrega estipulado.
+
+Após realizar a reunião de iniciação, dá-se o início das Sprints, que são as fases do modelo cascata. A primeira fase se trata do Levantamento de Requisitos \cite{sommervilleengenharia}, que é formado por cinco subsprints com um total de duração de 6 semanas. O longo prazo dessa fase se deve a complexidade das subsprints, os requisitos são fundamentais para o sucesso do projeto, portanto o foco nessa parte do processo é muito importante. As subsprints e suas atividades podem ser visualizadas no item 3 deste documento, os artefatos gerados estão no item 3.2.
+
+Ao final das 6 semanas, é realizada a reunião de iniciação sprint, a organização que adota o processo define como serão realizadas as reuniões, não existe nenhuma obrigatoriedade quanto à duração ou permanecer em pé como acontece no scrum, o único requisito é que seja documentada conforme o template disponibilizado.
+
+Com a reunião concluída e documentada, é iniciada a segunda Sprint, que é a fase de Projeto e Implementação do cascata \cite{sommervilleengenharia}, é importante ressaltar que os integrantes da equipe (definido pelo Scrum Team) podem assumir diferentes funções ao longo do processo. Esta fase tem a duração de 7 semanas com 3 subsprints, sendo 4 semanas reservadas para a subsprint de implementação, que consiste na codificação e descrição do código do sistema. Ao final da sprint, novamente é realizada uma reunião de iniciação da sprint.
+
+A terceira sprint do SCU é a fase de Verificação e Validação , com a duração de 2 semanas, essa fase é rápida, porém deve ser realizada com muita atenção, é nela que serão identificados os problemas decorrentes no sistema por meio de testes que devem ser executados com base num conjunto de casos de teste definidos pela organização/Scrum master juntamente com a equipe, que é o plano de teste. Esta fase pode identificar mudanças nos requisitos, por isso é importante realizar uma avaliação dos testes, que ajuda a decidir se essas mudanças são realmente plausíveis, pois nada impede que um teste seja conduzido incorretamente levando a resultados incoerentes com o objetivo da aplicação. Ao esgotar o prazo da sprint e concluir os testes, é o momento de realizar a reunião e dar início a quarta sprint.
+
+A próxima sprint consiste na fase de Implantação do cascata \cite{sommervilleengenharia}, no SCU é estabelecida num período de 2 semanas, com 4 subsprints definidas. Nessa parte do processo o sistema é disponibilizado para os usuários, portanto deve ser entregue um manual e os treinamentos devem ser realizados para utilização do software, além disso, a instalação deve ser documentada conforme o relatório de instalação disponibilizado, isto é importante para controlar a distribuição do sistema. A utilização do sistema pelos usuários pode acarretar em novas mudanças ou aparecimento de bugs, essas informações devem constar no relatório de implantação ou ser discutidas e documentadas na reunião para iniciação da próxima Sprint.
+
+A última sprint é a fase de Manutenção e Evolução do cascata \cite{sommervilleengenharia}, essa fase possui 5 subsprints, a subsprint chamada “gerência de alteração” tem a duração de 2 semanas, é nela que são corrigidos bugs percebidos durante a utilização do sistema e adotadas rotinas para manutenção e testes constantes do produto. Além disso, essa sprint controla as versões do sistema, as possíveis alterações e informações relacionadas ao progresso e resultados do software, as subsprints responsáveis por esses dados não possuem duração, pois acompanham o desenvolvimento e a evolução do produto.
+
+O esquema do processo pode ser visualizado na Figura \ref{modelodoprocesso}.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{modelo-do-processo.png}
+\caption{Modelo do Processo}
+\label{modelodoprocesso}
+\end{figure}
+\FloatBarrier
+
+O BPMN é o Modelo e Notação de Processos de Negócio que permite visualizar o gerenciamento dos processos de negócio do projeto que será desenvolvido. Os modelos foram divididos por fases, como podemos observar nas imagens abaixo.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{glevantamento.png}
+\caption{Diagrama BPMN: Levantamento de Requisitos}
+\label{levantamento}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{projeto_implementacao.png}
+\caption{Diagrama BPMN: Projeto e Implementação}
+\label{projeto}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{verificacao.png}
+\caption{Diagrama BPMN: Verificação e validação}
+\label{verificacao}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{implantacaoo.png}
+\caption{Diagrama BPMN: Implantação}
+\label{implantacacao}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{manutencao-evolucao.png}
+\caption{Diagrama BPMN: Manutenção e Evolução}
+\label{manutencao}
+\end{figure}
+\FloatBarrier
+
+
+
+
+\subsection{Papeis}
+No projeto foram utilizados os papéis da metodologia Scrum, onde são divididos em Product Owner, Scrum Master e Scrum Team. O Product Owner seria aquele que possui conhecimento dos requisitos do projeto, no caso o sujeito que deseja o sistema. Já o Scrum Master pode ser exercido por qualquer pessoa da equipe e é responsável por garantir que processo seja seguido e prever possíveis entraves que possam acarretar em atrasos no cronograma. No papel de Scrum Team os integrantes são flexíveis e podem desenvolver em todas áreas do projeto. Para melhor especificação a Tabela \ref{tabPapeis} descreve cada função existente que será necessária no projeto.//
+
+
+\input{tabPapeis.tex}
+\FloatBarrier
+
+
+\subsection{Atividades}
+A Tabela \ref{tabAtvPapeis} descreve cada uma das atividades do processo, relacionando com o respectivo papel responsável por sua execução. \\
+
+\input{tabAtvPapeis.tex}
+\FloatBarrier
+
+\section{Execução do projeto}
+
+Nesta seção descrevemos o cronograma previsto para o projeto e o estado atual do projeto.
+
+\subsection{Backlog e sprints}
+O cronograma da Tabela \ref{tabCronAtvInt} abrange todas as sprints que serão realizadas durante o desenvolvimento e as respectivas atividades que deverão ser executadas naquele período. Cada atividade tem como responsável um integrante do projeto. A duração total prevista da execução do processo é de 17 semanas.
+
+\input{tabCronAtvInt.tex}
+\FloatBarrier
+
+\subsection{Estado atual}
+Para o controle dos artefatos gerados pelo processo e das atividades de cada fase foram utilizados os templates abaixo, que têm por objetivo facilitar a visualização do estado atual do projeto, por meio de checklists.
+
+O template da Tabela \ref{tabChecklistArtefato} é o checklist de todos os artefatos divididos por fases.
+
+O template da Tabela \ref{tabChecklistAtividade} é o checklist de todas as atividades divididas por fases.
+
+Ambas as tabelas foram ordenadas por ordem cronológica, facilitando a visualização de quais artefatos ou atividades já foram realizadas e quais ainda precisam ser entregues.
+
+\input{tabChecklistArtefatos.tex}
+\FloatBarrier
+
+\input{tabChecklistAtividade.tex}
+\FloatBarrier
+
+Complementando, nos anexos possui os templates de relatórios Geral na figura \ref{relatorioGeral}, relatório de instalação na figura \ref{relatorioInstalacao},
+template de finalização na figura \ref{templateFinalizacao}, template de Inicialização de Sprint na figura \ref{templateInicializacao} e Template de ata de reunião de definição de Sprints na figura \ref{templateSprint}
+
+
+\section{Referências bibliográficas}
+\renewcommand\refname{} %%Referências bibliográficas}  
+\bibliographystyle{ieeetr}
+\bibliography{bibliografia}  
+
+\section{Anexos}
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{templateRel.pdf}
+\caption{Template Relatório Geral}
+\label{relatorioGeral}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{templateInstalacao.pdf}
+\caption{Template de Relatório de Instalação}
+\label{relatorioInstalacao}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{finalizacao.jpg}
+\caption{Template ata de reunião de finalização de fase}
+\label{templateFinalizacao}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{iniciacaoProjeto.jpg}
+\caption{Template ata de reunião de incialização do Projeto}
+\label{templateInicializacao}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{iniciacaoSprint.jpg}
+\caption{Template ata de reunião de iniciação de Sprint}
+\label{templateSprint}
+\end{figure}
+\FloatBarrier
+
+\end{document}
